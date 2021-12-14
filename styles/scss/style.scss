@@ -1,0 +1,266 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.main-container{
+    background: #01591e;
+    background: linear-gradient(90deg, #01591e 0%, #59c532 81%);
+    @media screen and (max-width: 290px) {
+        background: #01591e;
+    }
+    .component-container{
+        display: grid;
+        margin: auto;
+        height: auto;
+        max-width: 650px;
+        min-width: 290px;
+        min-height: 445px;
+        border-radius: 1em;
+        background-color: #fff;
+        box-shadow: 9px 16px 15px rgb(0 0 0 / 0.13);
+        border: 1px solid black;
+        .top-half{
+            display: block;
+            height: 200px;
+            min-height: 200px;
+            border-radius: 1em;
+            .heading-section{
+                border-bottom: 1px solid #cccc;
+                width: 80%;
+                margin: auto;     
+                h1{
+                    position: relative;
+                    margin: 0;
+                    padding: 1em 0 0.5em 0;
+                    color: black;
+                    text-align: center;
+                    font-weight: bold;
+                }
+            }
+            .body-section{
+                padding: 0 1em 0 1em;
+                width: 80%;
+                margin: auto; 
+                max-height: 75px;
+                overflow-y: scroll;  
+            }
+        }
+        .bottom-half{
+            display: block;
+            border-radius: 1em;
+            min-height: 244px;
+            .tab-container{
+                height: 100%;
+                .tabs{
+                    overflow: hidden;
+                    border-top: 1px solid #ccc;
+                    background-color: #f1f1f1;
+
+                    button{
+                        &.tab-select{
+                            background-color: inherit;
+                            float: left;
+                            border: none;
+                            outline: none;
+                            cursor: pointer;
+                            padding: 14px 16px;
+                            transition: 0.3s;
+                            font-size: 17px;
+                            font-weight: bold;
+                            width: 50%;
+                            border: 1px solid #ccc;
+                            border-top: 3px #f1f1f1 solid;
+                            &:hover{
+                                background-color: #ddd;
+                                border-color: #ddd;
+                                color: #fff;
+                            }
+                            &.selected{
+                                border-bottom-color: #fff;
+                                background-color: #fff;
+                                border-top: 3px #399d2b solid;
+                                color: #399d2b;
+                                cursor: default;
+                            }
+                        }
+                    }
+                }
+                .tab-content{
+                    display: none;
+                    padding: 6px 3em;
+                    border-top: none;
+                    @media screen and (max-width: 380px) {
+                        padding: 0;
+                    }
+                    .search-box{
+                        margin: 1em auto 1em auto;
+                        padding: 1em;
+                        border: solid 1px #ccc;
+                        border-radius: 5px;
+                        label{
+                            font-weight: bold;
+                            font-size: 20px;
+                        }
+                        .add-coin{
+                            border-radius: 5px;
+                            padding: 0.5em;
+                            width: 100%;
+                            background-color: #fff;
+                            border: none;
+                            border: solid 1px #ccc;
+                            font-weight: bold;
+                            &:hover{
+                                background-color: #ccc;
+                                color: #fff;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                    &.active-tab-content{
+                        display: block;
+                    }
+                    .settings-option{
+                        border: 1px solid #ccc;
+                        border-radius: 5px;
+                        padding: 1em;
+                        margin: 1em auto 0 auto;
+                        h3{
+                            margin: 0;
+                            width: fit-content;
+                            float: left;
+                            padding-right: 1em;
+                        }
+                        &:last-child{
+                            margin: 1em auto 1em auto;
+                        }
+                    }
+                    .coin-container{
+                        overflow-y: scroll;
+                        max-height: 390px;
+                        margin: auto;
+                        padding-bottom: 1em;
+                        .coin-tile{
+                            display: block;
+                            background-color: #fff;
+                            border-radius: 1em;
+                            margin: 1em auto;
+                            padding: 1em;
+                            height: fit-content;
+                            max-width: 300px;
+                            box-shadow: 9px 16px 15px rgb(0 0 0 / 0.13);
+                            border: #ccc 1px solid;
+                            @media screen and (max-width: 320) {
+                                width: 230px;
+                            }
+                            .remove-btn {
+                                position: relative;
+                                font-weight: 700;
+                                font-size: 1.3em;
+                                left: 90%;
+                                bottom: 28px;
+                                color: black;
+                                background-color: #fff;
+                                border: none;
+                                &:hover{
+                                    color: #ccc;
+                                    cursor: pointer;
+                                }
+                            }
+                            img{
+                                height: 50px;
+                                width: 50px;
+                                position: relative;
+                                left: 32%;
+                            }
+                            h3{
+                                margin: 0 0 1em 0;
+                                width: fit-content;
+                                border-bottom: #ccc 1px solid;
+                                a{
+                                    text-decoration: none;
+                                    color: inherit;
+                                }
+                                &:hover{
+                                    border-bottom-style: dashed;
+                                }
+                            }
+                            p{
+                                margin: 0 0 4px 0;
+                                font-weight: bold;
+                            }
+                            span{
+                                &.data-values{
+                                    font-weight: normal;
+                                    white-space: nowrap;
+                                }
+                            }
+                            svg{
+                                &.low{
+                                    transform: rotate(90deg);
+                                    height: 1em;
+                                    width: 1em;
+                                    fill: red;
+                                    padding-left: 6px;
+                                }
+                                &.high{
+                                    transform: rotate(270deg);
+                                    height: 1em;
+                                    width: 1em;
+                                    fill: green;
+                                    padding-left: 6px;                                    
+                                    top: 4px;
+                                    position: relative;
+                                }
+                            }
+                        }
+                    }  
+                }
+            } 
+        }
+    }
+}
+select{
+    margin: 1em 0 1em;
+    font-size: 18px;
+    border: none;
+    border-bottom: #ccc 1px solid;
+    width: 100%;
+    outline: 0;
+    &:focus{
+        border: none;
+        border-bottom: #ccc 1px solid;
+        box-shadow: none!important
+    }
+    &:hover{
+        cursor: pointer;
+        border-color: #4a4a4a;
+    }
+}
+.row {
+    display: flex;
+}
+.column {
+    flex: 50%;
+    &.text-center{
+        text-align: center;
+    }
+}
+::-webkit-scrollbar {
+    width: 10px;
+    @media screen and (max-width: 505px) {
+        width: 7px;
+    }
+}
+::-webkit-scrollbar-track {
+    background: transparent; 
+}
+::-webkit-scrollbar-thumb {
+    background: #888; 
+    border-radius: 5px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #4a4a4a; 
+}
+h6{
+    margin: auto;
+    display: inline-flex;
+}

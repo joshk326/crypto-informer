@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Informer</title>
+    <link rel="stylesheet" type="text/css" href="/styles/scss/style.css"/>
+</head>
+<body class="main-container">
+    <div class="component-container">
+      <div class="top-half">
+        <div class="heading-section">
+            <h1>Crypto Informer</h1>
+        </div>
+        <div class="body-section">
+            <p>
+                This is a test application to view information on different crypto currencies by using the coingecko api.
+            </p>
+        </div>
+      </div>
+      <div class="bottom-half">
+          
+          <div class="tab-container">
+                <div class="tabs">
+                    <button class="tab-select selected" onclick="selectTab(event, 'dashboard')">Dashboard</button>
+                    <button class="tab-select" onclick="selectTab(event, 'settings')">Settings</button>
+                </div>
+                <div id="dashboard" class="tab-content active-tab-content">
+                    <div class="search-box">
+                        <select id="coin-search">
+                            <option value="" disabled selected>Select a Coin</option>
+                            <option>aave</option>
+                            <option>algorand</option>
+                            <option>amp-token</option>
+                            <option>arweave</option>
+                            <option>avalanche-2</option>
+                            <option>axie-infinity</option>
+                            <option>basic-attention-token</option>
+                            <option>binance-usd</option>
+                            <option>binancecoin</option>
+                            <option>bitclout</option>
+                            <option>bitcoin</option>
+                            <option>bitcoin-cash</option>
+                            <option>bitcoin-cash-abc-2</option>
+                            <option>bitcoin-cash-sv</option>
+                            <option>bittorrent-2</option>
+                            <option>blockstack</option>
+                            <option>cardano</option>
+                            <option>cdai</option>
+                            <option>celo</option>
+                            <option>celsius-degree-token</option>
+                            <option>chainlink</option>
+                            <option>chiliz</option>
+                            <option>compound-ether</option>
+                            <option>compound-governance-token</option>
+                            <option>compound-usd-coin</option>
+                            <option>convex-finance</option>
+                            <option>cosmos</option>
+                            <option>crypto-com-chain</option>
+                            <option>curve-dao-token</option>
+                            <option>dai</option>
+                            <option>dash</option>
+                            <option>decentraland</option>
+                            <option>dogecoin</option>
+                            <option>ecash</option>
+                            <option>ecomi</option>
+                            <option>elrond-erd-2</option>
+                            <option>enjincoin</option>
+                            <option>eos</option>
+                            <option>ethereum</option>
+                            <option>ethereum-classic</option>
+                            <option>fantom</option>
+                            <option>filecoin</option>
+                            <option>flow</option>
+                            <option>frax</option>
+                            <option>ftx-token</option>
+                            <option>gala</option>
+                            <option>harmony</option>
+                            <option>hedera-hashgraph</option>
+                            <option>helium</option>
+                            <option>holotoken</option>
+                            <option>huobi-btc</option>
+                            <option>huobi-token</option>
+                            <option>internet-computer</option>
+                            <option>iota</option>
+                            <option>kadena</option>
+                            <option>klay-token</option>
+                            <option>kucoin-shares</option>
+                            <option>kusama</option>
+                            <option>leo-token</option>
+                            <option>link</option>
+                            <option>litecoin</option>
+                            <option>loopring</option>
+                            <option>magic-internet-money</option>
+                            <option>maker</option>
+                            <option>matic-network</option>
+                            <option>monero</option>
+                            <option>msol</option>
+                            <option>near</option>
+                            <option>nem</option>
+                            <option>neo</option>
+                            <option>nexo</option>
+                            <option>okb</option>
+                            <option>olympus</option>
+                            <option>pancakeswap-token</option>
+                            <option>paxos-standard</option>
+                            <option>polkadot</option>
+                            <option>quant-network</option>
+                            <option>radix</option>
+                            <option>ripple</option>
+                            <option>shiba-inu</option>
+                            <option>solana</option>
+                            <option>staked-ether</option>
+                            <option>stellar</option>
+                            <option>terra-luna</option>
+                            <option>terrausd</option>
+                            <option>tether</option>
+                            <option>tezos</option>
+                            <option>the-graph</option>
+                            <option>the-sandbox</option>
+                            <option>theta-fuel</option>
+                            <option>theta-token</option>
+                            <option>thorchain</option>
+                            <option>tron</option>
+                            <option>true-usd</option>
+                            <option>uniswap</option>
+                            <option>usd-coin</option>
+                            <option>vechain</option>
+                            <option>waves</option>
+                            <option>wrapped-bitcoin</option>
+                            <option>zcash</option>
+                        </select>
+                        <button class="add-coin" onclick="coinSearch()">Add Coin</button>
+                    </div>
+                    <div id="coins" class="coin-container"></div>            
+                </div>
+                <div id="settings" class="tab-content">
+                    <div class="settings-option">
+                        <h3>Currency:</h3>
+                        <select id="price-select">
+                            <option>usd</option>
+                            <option>aed</option>
+                            <option>ars</option>
+                            <option>aud</option>
+                            <option>bch</option>
+                            <option>bdt</option>
+                            <option>bhd</option>
+                            <option>bmd</option>
+                            <option>bnb</option>
+                            <option>brl</option>
+                            <option>cad</option>
+                            <option>chf</option>
+                            <option>clp</option>
+                            <option>cny</option>
+                            <option>czk</option>
+                            <option>dkk</option>
+                            <option>dot</option>
+                            <option>eos</option>
+                            <option>eth</option>
+                            <option>eur</option>
+                            <option>gbp</option>
+                            <option>hkd</option>
+                            <option>huf</option>
+                            <option>idr</option>
+                            <option>ils</option>
+                            <option>inr</option>
+                            <option>jpy</option>
+                            <option>krw</option>
+                            <option>lkr</option>
+                            <option>ltc</option>
+                            <option>mmk</option>
+                            <option>mxn</option>
+                            <option>myr</option>
+                            <option>ngn</option>
+                            <option>nok</option>
+                            <option>nzd</option>
+                            <option>php</option>
+                            <option>pkr</option>
+                            <option>pln</option>
+                            <option>rub</option>
+                            <option>sar</option>
+                            <option>sek</option>
+                            <option>sgd</option>
+                            <option>thb</option>
+                            <option>try</option>
+                            <option>twd</option>
+                            <option>uah</option>
+                            <option>usd</option>
+                            <option>vef</option>
+                            <option>vnd</option>
+                            <option>xag</option>
+                            <option>xau</option>
+                            <option>xdr</option>
+                            <option>xlm</option>
+                            <option>xrp</option>
+                            <option>yfi</option>
+                            <option>zar</option>
+                            <option>bits</option>
+                            <option>link</option>
+                            <option>sats</option>
+                        </select>
+                    </div>
+                    <div class="settings-option">
+                        <h3>Auto Update Coin Data:</h3>
+                        <input id="auto-update" type="checkbox"><h6>Updates Every 60s</h6></input>
+                    </div>
+                </div>
+          </div> 
+      </div>
+    </div>
+</body>
+<script src="js/main.js"></script>
+<script src="js/coins.js"></script>
+</html>
